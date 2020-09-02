@@ -1,0 +1,27 @@
+#Print the prime numbers up to a specified limit.
+#based of the Sieve of Eratosthenes algorithm
+n=int(input())
+prime = [True for i in range(n + 1)]
+p = 2
+while p * p <= n:
+    if (prime[p] == True):
+        for i in range(p * 2, n + 1, p):
+            prime[i] = False
+    p += 1
+prime[0]= False
+prime[1]= False
+for i in range(len(prime)):
+    if prime[i]:
+        print(i)
+
+
+
+
+C:\Users\nikhil\PycharmProjects\Fistproj\venv\Scripts\python.exe C:/Users/nikhil/PycharmProjects/Fistproj/Messanger.py
+9
+2
+3
+5
+7
+
+Process finished with exit code 0
