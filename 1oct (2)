@@ -1,0 +1,38 @@
+class Node:
+    def _init_(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def _init_(self):
+        self.head = None
+    def AppendNode(self, data):
+        new_node = Node(data)
+        if self.head == None:
+            self.head = new_node
+            return
+        k=self.head
+        while k.next!=None:
+            k=k.next
+        k.next=new_node
+
+    def PrintList( self ):
+        node = self.head
+        while node != None:
+            print (node.data)
+            node = node.next
+list = LinkedList()
+list.AppendNode(1)
+q=input().strip().split()
+for i in q:
+    list.AppendNode(i)
+list.PrintList()
+output :
+1 2 3 4 5 6
+1
+1
+2
+3
+4
+5
+6
